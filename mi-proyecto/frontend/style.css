@@ -1,0 +1,33 @@
+body { padding: 1rem; }
+
+.msg { font-size: 0.9rem; margin-top: 0.5rem; }
+.msg.error { color: #e74c3c; }
+.msg.ok { color: #27ae60; }
+
+#header-app { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+.nota-card { 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 1rem; 
+  margin-bottom: 1rem; 
+}
+
+.nota-card h4 { margin: 0 0 0.3rem; }
+.nota-card small { color: #888; }
+
+.nota-actions { 
+  margin-top: 0.7rem; 
+  display: flex; 
+  gap: 0.5rem; 
+}
+
+#tabs { 
+  display: flex; 
+  gap: 1rem; 
+  margin-bottom: 1rem; 
+}

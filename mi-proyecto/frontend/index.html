@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestor de Notas</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+
+    <!-- SECCIÓN LOGIN/REGISTRO -->
+    <section id="section-auth">
+      <h1>📝 Gestor de Notas</h1>
+      <div id="tabs">
+        <button onclick="showTab('login')">Iniciar sesión</button>
+        <button onclick="showTab('register')">Registrarse</button>
+      </div>
+
+      <article id="tab-login">
+        <h2>Iniciar sesión</h2>
+        <input type="text" id="login-user" placeholder="Usuario">
+        <input type="password" id="login-pass" placeholder="Contraseña">
+        <button onclick="login()">Entrar</button>
+        <p id="login-msg" class="msg"></p>
+      </article>
+
+      <article id="tab-register" style="display:none">
+        <h2>Registrarse</h2>
+        <input type="text" id="reg-user" placeholder="Usuario">
+        <input type="password" id="reg-pass" placeholder="Contraseña">
+        <input type="password" id="reg-confirm" placeholder="Confirmar contraseña">
+        <button onclick="register()">Crear cuenta</button>
+        <p id="reg-msg" class="msg"></p>
+      </article>
+    </section>
+
+    <!-- SECCIÓN APP (se muestra tras el login) -->
+    <section id="section-app" style="display:none">
+      <div id="header-app">
+        <h2>Hola, <span id="username-display"></span> 👋</h2>
+        <button class="secondary" onclick="logout()">Cerrar sesión</button>
+      </div>
+
+      <article>
+        <h3 id="form-title">Nueva nota</h3>
+        <input type="text" id="nota-titulo" placeholder="Título">
+        <textarea id="nota-contenido" placeholder="Contenido..." rows="4"></textarea>
+        <div>
+          <button onclick="guardarNota()">💾 Guardar</button>
+          <button class="secondary" onclick="cancelarEdicion()" id="btn-cancelar" style="display:none">Cancelar</button>
+        </div>
+        <p id="nota-msg" class="msg"></p>
+      </article>
+
+      <h3>Mis notas</h3>
+      <div id="lista-notas"></div>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
